@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     shim: false
   },
   srcDir: 'src/',
+  app: {
+    baseURL: process.env.NODE_ENV === 'production'
+      ? 'https://brownsugar.tw/'
+      : '/'
+  },
   css: [
     '@primer/css/index.scss'
   ]

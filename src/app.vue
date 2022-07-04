@@ -14,8 +14,6 @@
                 <a
                   aria-current="page"
                   href="https://github.com/brownsugar/home"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >Home</a>
               </li>
             </ol>
@@ -49,7 +47,7 @@
         </div>
       </div>
       <footer class="color-fg-muted text-center border-top mt-6 pt-4">
-        Brownsugar Works. © 2009-2022
+        Brownsugar Works © 2009-2022
       </footer>
     </div>
   </div>
@@ -60,6 +58,41 @@ const { data, error } = await useFetch<string>(
   'https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md'
 )
 const output = await useMarkdown(data.value)
+
+const { app: { baseURL } } = useRuntimeConfig()
+const title = 'Brownsugar Works'
+const description = 'Brownsugar Works is a concept project created by Lay since 2009 and it\'s also a personal profolio website.'
+const favicon = baseURL + 'favicon.ico'
+const touchIcon = baseURL + 'images/icon.png'
+const coverImage = baseURL + 'images/cover.png'
+useHead({
+  title,
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  charset: 'utf-8',
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: favicon },
+    { rel: 'apple-touch-icon', href: touchIcon },
+    { rel: 'image_src', href: coverImage }
+  ],
+  meta: [
+    { name: 'theme-color', content: '#F6F8FA' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: '#F6F8FA' },
+    { name: 'description', content: description },
+    { property: 'og:site_name', content: title },
+    { property: 'og:title', content: title },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:locale', content: 'en_US' },
+    { property: 'og:url', content: baseURL },
+    { property: 'og:description', content: description },
+    { property: 'og:image', content: coverImage },
+    { property: 'og:image:type', content: 'image/png' },
+    { property: 'og:image:width', content: 1200 },
+    { property: 'og:image:height', content: 630 }
+  ]
+})
 </script>
 
 <style lang="scss" scoped>
