@@ -101,6 +101,11 @@ useHead({
     { property: 'og:image:height', content: 630 }
   ]
 })
+
+onMounted(async () => {
+  const { pageview } = await import('vue-gtag')
+  pageview({})
+})
 </script>
 
 <style lang="scss" scoped>

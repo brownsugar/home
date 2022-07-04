@@ -14,5 +14,10 @@ export default defineNuxtConfig({
   },
   css: [
     '@primer/css/index.scss'
-  ]
+  ],
+  runtimeConfig: {
+    public: {
+      gaMeasurementId: 'G-CT5MR0JQV9'
+    }
+  }
 })

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@primer/css": "^20.2.4",
-    "markdown-it": "^13.0.1"
+    "markdown-it": "^13.0.1",
+    "vue-gtag": "^2.0.1"
   }
 }
