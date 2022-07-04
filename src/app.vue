@@ -47,7 +47,13 @@
         </div>
       </div>
       <footer class="color-fg-muted text-center border-top mt-6 pt-4">
-        Brownsugar Works © 2009-2022
+        Brownsugar Works © 2009-{{ currentYear }}
+        <a
+          class="ml-1"
+          href="https://github.com/brownsugar/home"
+        >
+          <span class="Label">Source code</span>
+        </a>
       </footer>
     </div>
   </div>
@@ -58,6 +64,8 @@ const { data, error } = await useFetch<string>(
   'https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md'
 )
 const output = await useMarkdown(data.value)
+
+const currentYear = new Date().getFullYear()
 
 const { app: { baseURL } } = useRuntimeConfig()
 const title = 'Brownsugar Works'
