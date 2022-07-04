@@ -1,0 +1,46 @@
+<template>
+  <NuxtLayout error>
+    <ErrorMessage
+      :title="title"
+      :message="message"
+    >
+      <template #action>
+        <a
+          class="btn btn-primary"
+          @click="backToHome"
+        >Back to Home</a>
+      </template>
+    </ErrorMessage>
+  </NuxtLayout>
+</template>
+
+<script lang="ts" setup>
+const props = defineProps({
+  error: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+const error = toRef(props, 'error')
+const statusCode = computed(() => Number(error.value.statusCode || 500))
+const title = computed(() => `Error ${statusCode.value}`)
+const message = computed(() =>
+  error.value.statusMessage as string ??
+    (statusCode.value === 404 ? 'Page Not Found' : 'Internal Server Error')
+)
+
+const backToHome = async () => {
+  const route = useRoute()
+
+  if (route.path === '/') {
+    window.location.reload()
+  } else {
+    await clearError({ redirect: '/' })
+  }
+}
+
+useHead({
+  title: title.value
+})
+</script>

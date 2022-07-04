@@ -8,5 +8,5 @@ export default defineNuxtPlugin((nuxtApp) => {
       id: gaMeasurementId,
       pageTrackerScreenviewEnabled: true
     }
-  })
+  }, useRouter())
 })
