@@ -54,12 +54,12 @@ const currentPath = computed(() => {
 })
 const currentYear = new Date().getFullYear()
 
-const { app: { baseURL } } = useRuntimeConfig()
+const { public: { server } } = useRuntimeConfig()
 const title = 'Brownsugar Works'
 const description = 'Brownsugar Works is a concept project created by Lay since 2009 and it\'s also a personal profolio website.'
-const favicon = baseURL + 'favicon.ico'
-const touchIcon = baseURL + 'images/icon.png'
-const coverImage = baseURL + 'images/cover.png'
+const favicon = server + '/favicon.ico'
+const touchIcon = server + '/images/icon.png'
+const coverImage = server + '/images/cover.png'
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - ${title}` : title
@@ -82,7 +82,7 @@ useHead({
     { property: 'og:title', content: title },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: 'en_US' },
-    { property: 'og:url', content: baseURL },
+    { property: 'og:url', content: server },
     { property: 'og:description', content: description },
     { property: 'og:image', content: coverImage },
     { property: 'og:image:type', content: 'image/png' },

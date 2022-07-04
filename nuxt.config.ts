@@ -7,16 +7,14 @@ export default defineNuxtConfig({
     shim: false
   },
   srcDir: 'src/',
-  app: {
-    baseURL: process.env.NODE_ENV === 'production'
-      ? 'https://brownsugar.tw/'
-      : '/'
-  },
   css: [
     '@primer/css/index.scss'
   ],
   runtimeConfig: {
     public: {
+      server: process.env.NODE_ENV === 'production'
+        ? 'https://brownsugar.tw'
+        : 'http://localhost:3000',
       gaMeasurementId: 'G-CT5MR0JQV9'
     }
   }
