@@ -1,8 +1,17 @@
 <template>
   <NuxtLayout>
-    <ErrorMessage
-      v-if="error"
-      message="This profile could not be loaded. Please try again later or visit my GitHub profile page directly."
+    <Message
+      v-if="pending"
+      title="Please wait"
+      emoji="⏳"
+    >
+      <template #message>
+        <p><span>The content is now loading</span><span class="AnimatedEllipsis" /></p>
+      </template>
+    </Message>
+    <Message
+      v-else-if="error"
+      message="The content could not be loaded. Please visit my GitHub profile page directly or try again later."
     >
       <template #action>
         <a
@@ -12,7 +21,7 @@
           rel="noopener noreferrer"
         >View on GitHub</a>
       </template>
-    </ErrorMessage>
+    </Message>
     <!-- eslint-disable vue/no-v-html -->
     <div
       v-else
@@ -23,8 +32,11 @@
 </template>
 
 <script lang="ts" setup>
-const { data, error } = await useFetch<string>(
+const { data, pending, error } = await useLazyFetch<string>(
   'https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md'
 )
-const output = await useMarkdown(data.value)
+const output = ref('')
+watch(data, async (val) => {
+  output.value = await useMarkdown(val)
+}, { immediate: true })
 </script>

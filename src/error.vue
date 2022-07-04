@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout error>
-    <ErrorMessage
+    <Message
       :title="title"
       :message="message"
     >
@@ -10,7 +10,7 @@
           @click="backToHome"
         >Back to Home</a>
       </template>
-    </ErrorMessage>
+    </Message>
   </NuxtLayout>
 </template>
 

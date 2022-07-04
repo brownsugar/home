@@ -1,10 +1,20 @@
 <template>
   <div class="blankslate blankslate-spacious">
     <h3 class="blankslate-heading">
-      <span class="mr-2">😵</span>
-      {{ title }}
+      <span
+        v-if="emoji"
+        class="mr-2"
+      >{{ emoji }}</span>
+      <span>{{ title }}</span>
     </h3>
-    <p>{{ message }}</p>
+    <slot
+      v-if="$slots.message"
+      name="message"
+    />
+    <p
+      v-else
+      v-text="message"
+    />
     <div
       v-if="$slots.action"
       class="blankslate-action"
@@ -23,11 +33,15 @@ defineProps({
   message: {
     type: String,
     default: 'Unexpected error occurred.'
+  },
+  emoji: {
+    type: [String, Boolean],
+    default: '😵'
   }
 })
 </script>
 <script lang="ts">
 export default defineComponent({
-  name: 'ErrorMessage'
+  name: 'MessageSlate'
 })
 </script>
