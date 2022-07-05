@@ -10,7 +10,7 @@
       </template>
     </Message>
     <Message
-      v-else-if="error"
+      v-else-if="error || !data.length"
       message="The content could not be loaded. Please visit my GitHub profile page directly or try again later."
     >
       <template #action>
@@ -26,17 +26,19 @@
     <div
       v-else
       class="markdown-body"
-      v-html="output"
+      v-html="data"
     />
   </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
-const { data, pending, error } = await useLazyFetch<string>(
-  'https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md'
+const { data, pending, error } = await useAsyncData<string>(
+  'readme',
+  async () => useMarkdown(
+    await $fetch('https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md')
+  ),
+  {
+    lazy: true
+  }
 )
-const output = ref('')
-watch(data, async (val) => {
-  output.value = await useMarkdown(val)
-}, { immediate: true })
 </script>
