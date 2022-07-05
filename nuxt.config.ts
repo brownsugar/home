@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   },
   srcDir: 'src/',
   css: [
-    '@primer/css/index.scss'
+    'assets/primer.scss'
   ],
   runtimeConfig: {
     public: {
