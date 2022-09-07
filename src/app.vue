@@ -35,7 +35,11 @@
 const { data, pending, error } = await useAsyncData<string>(
   'readme',
   async () => useMarkdown(
-    await $fetch('https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md')
+    await $fetch('/api', {
+      params: {
+        target: 'https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md'
+      }
+    })
   ),
   {
     lazy: true
