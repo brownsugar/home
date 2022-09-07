@@ -1,6 +1,6 @@
 <script lang="ts">
 // This file is for enabling routing only
-defineComponent({
+export default defineComponent({
   name: 'PageIndex'
 })
 </script>
