@@ -16,8 +16,10 @@ export default defineEventHandler(async ({ req, res }) => {
     return res.writeHead(404).end()
   }
   const result = await get(target)
+  const { public: { server } } = useRuntimeConfig()
   res
     .writeHead(result.status, {
+      'Access-Control-Allow-Origin': server,
       'Content-Type': result.contentType as string,
       'Content-Length': result.contentLength as string
     })
