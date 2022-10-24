@@ -10,15 +10,15 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@types/markdown-it": "^12.2.3",
-    "eslint": "^8.23.0",
-    "nuxt": "^3.0.0-rc.9",
-    "sass": "^1.54.8",
-    "typescript": "^4.8.2"
+    "eslint": "^8.26.0",
+    "nuxt": "^3.0.0-rc.12",
+    "sass": "^1.55.0",
+    "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@primer/css": "^20.4.4",
+    "@primer/css": "^20.4.8",
     "markdown-it": "^13.0.1",
-    "vue-gtag": "^2.0.1"
+    "vue-gtag": "^2.0.2-beta.0"
   },
   "engines": {
     "node": "^16 || ^18"

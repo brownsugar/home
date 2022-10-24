@@ -64,8 +64,6 @@ useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - ${title}` : title
   },
-  viewport: 'width=device-width, initial-scale=1',
-  charset: 'utf-8',
   htmlAttrs: {
     lang: 'en'
   },
@@ -75,6 +73,8 @@ useHead({
     { rel: 'image_src', href: coverImage }
   ],
   meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { charset: 'utf-8' },
     { name: 'theme-color', content: '#F6F8FA' },
     { name: 'apple-mobile-web-app-status-bar-style', content: '#F6F8FA' },
     { name: 'description', content: description },
