@@ -11,8 +11,22 @@ export const useMarkdown = async (rawMarkdown: string) => {
 
   // External links
   md.renderer.rules.link_open = (tokens, idx, options, _env, self) => {
-    tokens[idx].attrPush(['target', '_blank'])
-    tokens[idx].attrPush(['rel', 'noopener noreferrer'])
+    const token = tokens[idx]
+    token.attrPush(['target', '_blank'])
+    token.attrPush(['rel', 'noopener noreferrer'])
+
+    try {
+      const attr = token.attrs?.find(arr => arr[0] === 'href')
+      if (attr) {
+        const url = new URL(attr?.[1])
+        if (url.searchParams.get('utm_source') !== null) {
+          url.searchParams.set('utm_source', 'brownsugar.tw')
+          url.searchParams.set('utm_medium', 'Home')
+          attr[1] = url.href
+        }
+      }
+    } catch (e) { }
+
     return self.renderToken(tokens, idx, options)
   }
   // Lazy loading
