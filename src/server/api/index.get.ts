@@ -20,8 +20,7 @@ export default defineEventHandler(async ({ req, res }) => {
   res
     .writeHead(result.status, {
       'Access-Control-Allow-Origin': server,
-      'Content-Type': result.contentType as string,
-      'Content-Length': result.contentLength as string
+      'Content-Type': result.contentType as string
     })
     .end(result.body)
 })
