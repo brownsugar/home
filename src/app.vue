@@ -10,7 +10,7 @@
       </template>
     </Message>
     <Message
-      v-else-if="error || !data.length"
+      v-else-if="error || !data?.length"
       message="The content could not be loaded. Please visit my GitHub profile page directly or try again later."
     >
       <template #action>
