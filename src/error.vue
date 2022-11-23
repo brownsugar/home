@@ -15,9 +15,11 @@
 </template>
 
 <script lang="ts" setup>
+import type { PropType } from 'vue'
+
 const props = defineProps({
   error: {
-    type: Object,
+    type: Object as PropType<ReturnType<typeof showError>>,
     default: () => ({})
   }
 })
