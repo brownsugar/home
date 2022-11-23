@@ -7,8 +7,11 @@
             <ol>
               <li class="breadcrumb-item">
                 <h1 class="Box-title m-0 d-inline">
-                  <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-                  <NuxtLink to="/">Brownsugar Works</NuxtLink>
+                  <NuxtLink
+                    to="/"
+                  >
+                    <span>Brownsugar Works</span>
+                  </NuxtLink>
                 </h1>
               </li>
               <li class="breadcrumb-item breadcrumb-item-selected ml-0">
@@ -56,7 +59,7 @@ const currentYear = new Date().getFullYear()
 
 const { public: { server } } = useRuntimeConfig()
 const title = 'Brownsugar Works'
-const description = 'Brownsugar Works is a concept project created by Lay since 2009 and it\'s also a personal profolio website.'
+const description = 'Brownsugar Works was a portal project created by Lay since 2009 and it\'s now a personal portfolio page that lists highlighted projects.'
 const favicon = server + '/favicon.ico'
 const touchIcon = server + '/images/icon.png'
 const coverImage = server + '/images/cover.png'
