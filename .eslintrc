@@ -1,19 +1,11 @@
 {
   "root": true,
-  "env": {
-    "browser": true,
-    "node": true
-  },
   "parserOptions": {
     "sourceType": "module",
-    "project": "./tsconfig.json",
-    "extraFileExtensions": [".vue"]
+    "project": "./tsconfig.json"
   },
   "extends": [
-    "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "@nuxtjs/eslint-config-typescript"
-  ],
-  "rules": {
-  }
+    "@brownsugar/nuxt"
+  ]
 }
