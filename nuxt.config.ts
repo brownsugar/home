@@ -15,5 +15,8 @@ export default defineNuxtConfig({
         : 'http://localhost:3000',
       gaMeasurementId: 'G-CT5MR0JQV9'
     }
-  }
+  },
+  modules: [
+    '@nuxt/devtools'
+  ]
 })
