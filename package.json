@@ -8,15 +8,15 @@
     "lint:js": "eslint --ext .ts,.js,.vue ."
   },
   "devDependencies": {
-    "@brownsugar/eslint-config-nuxt": "^1.0.4",
+    "@brownsugar/eslint-config-nuxt": "^1.0.6",
     "@types/markdown-it": "^12.2.3",
-    "eslint": "^8.28.0",
-    "nuxt": "^3.0.0",
-    "sass": "^1.56.1",
-    "typescript": "^4.9.3"
+    "eslint": "^8.34.0",
+    "nuxt": "^3.2.0",
+    "sass": "^1.58.1",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@primer/css": "^20.7.1",
+    "@primer/css": "^20.8.2",
     "markdown-it": "^13.0.1",
     "vue-gtag": "^2.0.2-beta.0"
   },
