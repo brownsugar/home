@@ -13,13 +13,13 @@
     "@types/markdown-it": "^12.2.3",
     "eslint": "^8.44.0",
     "nuxt": "^3.6.1",
+    "nuxt-gtag": "^0.5.7",
     "sass": "^1.63.6",
     "typescript": "^5.1.6"
   },
   "dependencies": {
     "@primer/css": "^21.0.7",
-    "markdown-it": "^13.0.1",
-    "vue-gtag": "^2.0.2-beta.0"
+    "markdown-it": "^13.0.1"
   },
   "engines": {
     "node": "^16 || ^18"

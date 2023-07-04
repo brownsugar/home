@@ -12,11 +12,14 @@ export default defineNuxtConfig({
     public: {
       server: process.env.NODE_ENV === 'production'
         ? 'https://brownsugar.tw'
-        : 'http://localhost:3000',
-      gaMeasurementId: 'G-CT5MR0JQV9'
+        : 'http://localhost:3000'
     }
   },
   modules: [
-    '@nuxt/devtools'
-  ]
+    '@nuxt/devtools',
+    'nuxt-gtag'
+  ],
+  gtag: {
+    id: 'G-CT5MR0JQV9'
+  }
 })
