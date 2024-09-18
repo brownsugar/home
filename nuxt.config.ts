@@ -21,5 +21,7 @@ export default defineNuxtConfig({
   ],
   gtag: {
     id: 'G-CT5MR0JQV9'
-  }
+  },
+
+  compatibilityDate: '2024-09-18'
 })

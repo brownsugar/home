@@ -5,21 +5,21 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint:js": "eslint --ext .ts,.js,.vue ."
+    "lint:js": "eslint ."
   },
   "devDependencies": {
-    "@brownsugar/eslint-config-nuxt": "^1.0.7",
-    "@nuxt/devtools": "^0.6.6",
-    "@types/markdown-it": "^12.2.3",
-    "eslint": "^8.44.0",
-    "nuxt": "^3.6.1",
-    "nuxt-gtag": "^0.5.7",
-    "sass": "^1.63.6",
-    "typescript": "^5.1.6"
+    "@brownsugar/eslint-config": "^3.2.1",
+    "@nuxt/devtools": "^1.4.2",
+    "@types/markdown-it": "^14.1.2",
+    "eslint": "^9.10.0",
+    "nuxt": "^3.13.2",
+    "nuxt-gtag": "^3.0.1",
+    "sass": "^1.79.1",
+    "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@primer/css": "^21.0.7",
-    "markdown-it": "^13.0.1"
+    "@primer/css": "^21.3.6",
+    "markdown-it": "^14.1.0"
   },
   "engines": {
     "node": "^16 || ^18"

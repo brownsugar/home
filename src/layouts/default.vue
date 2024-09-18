@@ -68,7 +68,9 @@ useHead({
     return titleChunk ? `${titleChunk} - ${title}` : title
   },
   htmlAttrs: {
-    lang: 'en'
+    lang: 'en',
+    'data-color-mode': 'light',
+    'data-light-theme': 'light'
   },
   link: [
     { rel: 'icon', type: 'image/x-icon', href: favicon },
