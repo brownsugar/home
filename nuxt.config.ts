@@ -2,26 +2,25 @@
 export default defineNuxtConfig({
   typescript: {
     strict: true,
-    shim: false
+    shim: false,
   },
   srcDir: 'src/',
   css: [
-    'assets/primer.scss'
+    'assets/primer.scss',
   ],
   runtimeConfig: {
     public: {
       server: process.env.NODE_ENV === 'production'
         ? 'https://brownsugar.tw'
-        : 'http://localhost:3000'
-    }
+        : 'http://localhost:3000',
+    },
   },
   modules: [
     '@nuxt/devtools',
-    'nuxt-gtag'
+    'nuxt-gtag',
   ],
   gtag: {
-    id: 'G-CT5MR0JQV9'
+    id: 'G-CT5MR0JQV9',
   },
-
-  compatibilityDate: '2024-09-18'
+  compatibilityDate: '2024-09-18',
 })

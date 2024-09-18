@@ -25,8 +25,8 @@
     <!-- eslint-disable vue/no-v-html -->
     <div
       v-else
-      class="markdown-body"
       v-html="data"
+      class="markdown-body"
     />
   </NuxtLayout>
 </template>
@@ -37,12 +37,12 @@ const { data, pending, error } = await useAsyncData<string>(
   async () => useMarkdown(
     await $fetch('/api', {
       params: {
-        target: 'https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md'
-      }
-    })
+        target: 'https://raw.githubusercontent.com/brownsugar/brownsugar/main/README.md',
+      },
+    }),
   ),
   {
-    lazy: true
-  }
+    lazy: true,
+  },
 )
 </script>

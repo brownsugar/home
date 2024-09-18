@@ -28,20 +28,20 @@
 defineProps({
   title: {
     type: String,
-    default: 'Oops! Something went wrong!'
+    default: 'Oops! Something went wrong!',
   },
   message: {
     type: String,
-    default: 'Unexpected error occurred.'
+    default: 'Unexpected error occurred.',
   },
   emoji: {
     type: [String, Boolean],
-    default: '😵'
-  }
+    default: '😵',
+  },
 })
 </script>
 <script lang="ts">
 export default defineComponent({
-  name: 'MessageSlate'
+  name: 'MessageSlate',
 })
 </script>

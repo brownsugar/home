@@ -1,15 +1,16 @@
-export const useMarkdown = async (rawMarkdown: string) => {
-  if (rawMarkdown == null) {
+export const useMarkdown = async (rawMarkdown = '') => {
+  if (rawMarkdown === '')
     return ''
-  }
+
   const markdownIt = (await import('markdown-it')).default
   const md = markdownIt({
     html: true,
     linkify: true,
-    typographer: true
+    typographer: true,
   })
 
   // External links
+  // eslint-disable-next-line camelcase
   md.renderer.rules.link_open = (tokens, idx, options, _env, self) => {
     const token = tokens[idx]
     token.attrPush(['target', '_blank'])
@@ -25,7 +26,9 @@ export const useMarkdown = async (rawMarkdown: string) => {
           attr[1] = url.href
         }
       }
-    } catch (e) { }
+    } catch (e) {
+      // Do nothing
+    }
 
     return self.renderToken(tokens, idx, options)
   }

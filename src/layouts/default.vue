@@ -46,8 +46,8 @@
 defineProps({
   error: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 })
 
 const route = useRoute()
@@ -64,18 +64,18 @@ const favicon = server + '/favicon.ico'
 const touchIcon = server + '/images/icon.png'
 const coverImage = server + '/images/cover.png'
 useHead({
-  titleTemplate: (titleChunk) => {
+  titleTemplate: titleChunk => {
     return titleChunk ? `${titleChunk} - ${title}` : title
   },
   htmlAttrs: {
     lang: 'en',
     'data-color-mode': 'light',
-    'data-light-theme': 'light'
+    'data-light-theme': 'light',
   },
   link: [
     { rel: 'icon', type: 'image/x-icon', href: favicon },
     { rel: 'apple-touch-icon', href: touchIcon },
-    { rel: 'image_src', href: coverImage }
+    { rel: 'image_src', href: coverImage },
   ],
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -92,13 +92,13 @@ useHead({
     { property: 'og:image', content: coverImage },
     { property: 'og:image:type', content: 'image/png' },
     { property: 'og:image:width', content: 1200 },
-    { property: 'og:image:height', content: 630 }
-  ]
+    { property: 'og:image:height', content: 630 },
+  ],
 })
 </script>
 <script lang="ts">
 export default defineComponent({
-  name: 'LayoutDefault'
+  name: 'LayoutDefault',
 })
 </script>
 
