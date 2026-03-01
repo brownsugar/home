@@ -1,10 +1,11 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/docs/api/nuxt-config
 export default defineNuxtConfig({
   typescript: {
     strict: true,
     shim: false,
   },
   srcDir: 'src/',
+  serverDir: 'src/server',
   css: [
     'assets/primer.scss',
   ],

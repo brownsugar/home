@@ -9,18 +9,23 @@ const get = async (url: string) => {
   }
 }
 
-export default defineEventHandler(async ({ req, res }) => {
-  const query = (new URL(req.url as string, 'https://localhost')).searchParams
-  const target = query.get('target')
-  if (target === null)
-    return res.writeHead(404).end()
+export default defineEventHandler(async (event) => {
+  const query = getQuery(event)
+  const target = query.target
+
+  if (typeof target !== 'string' || target.length === 0) {
+    setResponseStatus(event, 404)
+    return ''
+  }
 
   const result = await get(target)
   const { public: { server } } = useRuntimeConfig()
-  res
-    .writeHead(result.status, {
-      'Access-Control-Allow-Origin': server,
-      'Content-Type': result.contentType as string,
-    })
-    .end(result.body)
+
+  setResponseStatus(event, result.status)
+  setResponseHeaders(event, {
+    'Access-Control-Allow-Origin': server,
+    'Content-Type': result.contentType ?? 'text/plain; charset=utf-8',
+  })
+
+  return result.body
 })

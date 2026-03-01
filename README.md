@@ -7,8 +7,7 @@ Project powers brownsugar.tw
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
+pnpm install
 ```
 
 ## Development Server
@@ -16,7 +15,7 @@ yarn install
 Start the development server on http://localhost:3000
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Production
@@ -24,13 +23,13 @@ yarn dev
 Build the application for production:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 Locally preview production build:
 
 ```bash
-yarn preview
+pnpm preview
 ```
 
 Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
